@@ -1,6 +1,11 @@
 const http = require('http');
 
-const svr = http.createServer();
+const svr = http.createServer((req, res) => {
+    if(req.url == "/") {
+        res.write("<html><style>h1 {background-color: red;}</style><h1>Hello - You are at the root page</h1></html>");
+        res.end();
+    }
+});
 
 svr.on('connection', (sckt) => {
     console.log('An attempt to get connection');
