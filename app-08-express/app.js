@@ -14,3 +14,11 @@ appExpress.get('/api/functions', (req, res) => {
 appExpress.listen(3000, () => {
     console.log("Express app is listening @ port 3000 ...")
 });
+
+// Take note that there is no checking what the path is as we did in http.createServer
+
+// To have the changes reflect in the testing browser, normally we need to stop the running by Ctrl + C, then rerun again (node app.js)
+// To avoid this, to have all the changes automatically reflect, we can use nodemon => Node monitor
+// npm install nodemon
+// Then run instead => nodemon app.js
+// Any changes to the files in this location will make the server automatically restart 
